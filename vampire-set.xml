@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PropertyList>
+
+ <sim  include="Nasal/views.xml">
+
+  <description>DH_Vampire_F3</description>
+  <author>StuartC ( 3d, FDM ) LesterBoffo (3D and animation ) </author>
+  <status>Alpha 1.3</status>
+ 
+  <flight-model>yasim</flight-model>
+  <aero>vampire-yasim</aero>
+  
+  <fuel-fraction>1.0</fuel-fraction>
+  
+    <sound>
+      <audible>true</audible>
+      <path>Aircraft/vampire/Sounds/sound.xml</path>
+    </sound>
+
+    <model>
+      <path>Aircraft/vampire/Models/Vampire-F3.xml</path>
+      <livery>
+        <file type="string">default</file>
+      </livery>
+    </model>
+	
+	<systems>
+      <autopilot>
+         <path>Aircraft/vampire/Systems/autopilot5.xml</path>
+      </autopilot>
+      <electrical>
+         <path>Aircraft/Generic/generic-electrical.xml</path>
+      </electrical>	  
+   </systems> 
+   
+   <mp-systems>
+    <combat-enabled type="bool">true</combat-enabled>
+   </mp-systems>
+
+    <submodels> 
+      <serviceable type="bool">true</serviceable>
+      <path>Aircraft/vampire/Models/effects/guns/submodels.xml</path>
+    </submodels>
+<!--
+    <startup>
+     <splash-texture>Aircraft/vampire/gloster-meteor-splash.png</splash-texture>
+    </startup>
+-->
+    <virtual-cockpit archive="y">true</virtual-cockpit>
+
+    <help>
+      <title>Vampire F3</title>
+      <key>
+        <name>d</name>
+        <desc>Open/Close canopy</desc>
+      </key>
+      <key>
+        <name>e</name>
+        <desc>Guns fire</desc>
+      </key>
+	   <key>
+        <name>}</name>
+        <desc>Start up /Shut down engine</desc>
+      </key>
+    </help>
+
+    <menubar include="Dialogs/gloster-meteor-menu.xml"/>
+
+  </sim>
+  <environment>
+    <turbulence>
+      <use-cloud-turbulence>true</use-cloud-turbulence>
+    </turbulence>
+  </environment>
+  
+  
+  <controls>
+  
+  <gear>
+   <brake-parking type="bool">true</brake-parking>
+  </gear>
+
+ </controls>
+  
+  <yasim>
+    <gloster-meteor>
+      <pilot-lb>128</pilot-lb>
+    </gloster-meteor>
+  </yasim>
+
+  <engines>
+    <engine n="0">
+      <engine-num type="int">0</engine-num>
+      <running>true</running>
+    </engine>
+    
+  </engines>
+
+  <consumables>
+    <fuel>
+      <tank n="0">
+        <tank-num type="int">0</tank-num>
+        <level-gal_us archive="y">1000</level-gal_us>
+      </tank>
+	  <tank n="1">
+        <tank-num type="int">1</tank-num>
+        <level-gal_us archive="y">1000</level-gal_us>
+      </tank>
+	  <tank n="2">
+	  <name>left-Tank</name>
+        <tank-num type="int">2</tank-num>
+        <level-gal_us archive="y">250</level-gal_us>
+      </tank>
+	  <tank n="3">
+	  <name>right-Tank</name>
+        <tank-num type="int">3</tank-num>
+        <level-gal_us archive="y">250</level-gal_us>
+      </tank>
+    </fuel>
+  </consumables>
+
+  <controls>
+    <armament>
+     <trigger type="bool">false</trigger>
+     <master-arm type="bool">true</master-arm>
+     <position-norm type="int">1</position-norm>
+    </armament>
+  </controls>
+
+  <input>
+    <keyboard include="Nasal/gloster-meteor-keyboard.xml"/>
+  </input>
+ 
+  <nasal>
+    <glostermeteor>
+      <file>Aircraft/vampire/Nasal/doors.nas</file>
+     <!-- <file>Aircraft/Gloster-Meteor/Nasal/liveries.nas</file> -->
+	 <file>Aircraft/vampire/Nasal/light.nas</file>
+    </glostermeteor>
+    <guns>
+      <file>Aircraft/vampire/Nasal/weapons.nas</file>
+      <file>Aircraft/vampire/Nasal/revi.nas</file>
+    </guns>
+	<engines>
+      <file>Aircraft/vampire/Nasal/generic-yasim-engine.nas</file>
+      <script>
+        var engine1 = engines.Jet.new(0, 0, 0.01, 5.21, 3, 5, 1, 6);
+        setlistener("sim/signals/fdm-initialized", func
+        {
+          engine1.init();
+        }, 0, 0);
+       </script>
+    </engines>
+  </nasal>
+
+</PropertyList>
+
