@@ -20,6 +20,32 @@
     </binding>
    </key>
 
+   <key n="10">
+		<name>Ctrl-J</name>
+		<desc>Jettison Inner and Outer Pylon Stores.</desc>
+		<!-- port inner -->
+		<binding>
+			<command>property-assign</command>
+			<property>controls/armament/station[0]/jettison-all</property>
+			<value type="bool">1</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+			<property>yasim/weights/tank-45gal-lbs[0]</property>
+			<value type="double">0.0</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+			<property>controls/armament/station[1]/jettison-all</property>
+			<value type="bool">1</value>
+		</binding>
+		<binding>
+			<command>property-assign</command>
+			<property>yasim/weights/tank-45gal-lbs[1]</property>
+			<value type="double">0.0</value>
+		</binding>
+	</key>
+
    <key n="101">
      <name>e</name>
      <desc>Guns</desc>
@@ -35,13 +61,5 @@
      </mod-up>
    </key>
 
-    <key n="125">
-     <name>}</name>
-     <desc>Engine Autostart</desc>
-	<binding>
-		<command>nasal</command>
-		<script>engines.engine1.autostart();</script>
-	</binding>
-  </key>
 </PropertyList>
 

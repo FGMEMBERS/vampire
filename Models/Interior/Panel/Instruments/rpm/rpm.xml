@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+
+<!-- engine rpm clock instrument -->
+
+<PropertyList>
+
+ <path>rpm.ac</path>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>rpm-Needle1</object-name>
+  <property>engines/engine/n1</property>
+  <interpolation>
+   <entry><ind>0</ind><dep>0.0</dep></entry>
+   <entry><ind>90</ind><dep>250</dep></entry>
+   <entry><ind>180</ind><dep>500</dep></entry>
+   <entry><ind>270</ind><dep>750</dep></entry>
+   <entry><ind>360</ind><dep>1000</dep></entry>
+  </interpolation>
+  <center>
+   <x-m>0</x-m>
+   <y-m>0</y-m>
+   <z-m>0</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation> 
+   <type>material</type>
+    <emission> 
+      <factor-prop>/controls/lighting/panel-norm</factor-prop>
+        <red>0.75</red>
+        <green>0.25</green>
+        <blue>0.25</blue>
+      </emission>
+  </animation>
+ 
+ 
+ <!-- *** LoD *** -->
+ <animation>
+  <type>range</type>
+  <min-m>0</min-m>
+  <max-m>5</max-m>
+ </animation>
+ 
+</PropertyList>

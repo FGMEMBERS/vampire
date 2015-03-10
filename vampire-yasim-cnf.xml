@@ -11,9 +11,9 @@
  </sim>
 
  <yasim>
-   <me262>
-     <pilot-lb>128</pilot-lb>
-   </me262>
+   <vampire>
+     <pilot-lb>198</pilot-lb>
+   </vampire>
  </yasim>
 
 </PropertyList>

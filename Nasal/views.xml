@@ -23,11 +23,11 @@
   <view n="0">
     <internal archive="y">true</internal>
     <config>
-      <x-offset-m archive="y">  -0.010 </x-offset-m> <!-- Right -->
-      <y-offset-m archive="y">  0.58 </y-offset-m> <!-- Up    -->
-      <z-offset-m archive="y"> -1.12 </z-offset-m> <!-- Back  -->
+      <x-offset-m archive="y">  0.000 </x-offset-m> <!-- Right -->
+      <y-offset-m archive="y">  0.616 </y-offset-m> <!-- Up    -->
+      <z-offset-m archive="y"> -0.99 </z-offset-m> <!-- Back  -->
       <pitch-offset-deg> -10 </pitch-offset-deg>
-      <default-field-of-view-deg> 85 </default-field-of-view-deg>
+      <default-field-of-view-deg> 80 </default-field-of-view-deg>
     </config>
   </view>
 

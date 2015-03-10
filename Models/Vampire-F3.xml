@@ -1,16 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<PropertyList include="bombableinclude.xml">
+<PropertyList>
 
-  <path>Vampire.ac</path>
-  
-  	<!-- MP sound call -->
-  <sound><path>Aircraft/vampire/Sounds/mp-sound.xml</path></sound>
+  <path>dh-vampire.ac</path>
+<!--
+  <nasal>
+    <load>
+      var livery_update = aircraft.livery_update.new("Aircraft/vampire/Models/Liveries", 10);
+    </load>
+    <unload>
+      livery_update.stop();
+    </unload>
+  </nasal>
+-->
   
 
-  <!-- fuselage reflection 
+<!-- glass reflecton -->
+  <animation>
+    <type>shader</type>
+    <shader>chrome</shader>
+    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
+    <object-name>CanopyGlass</object-name>
+<object-name>canopy-glass</object-name>
+<object-name>front-galss</object-name>
+
+    
+  </animation>
   
-  <effect>
+  <!-- fuselage reflection -->
+  
+ <!-- <effect>
     <inherits-from>Aircraft/Generic/Effects/Fuselagereflect</inherits-from>
     <object-name>fuselage</object-name>
     <object-name>left-boom</object-name>
@@ -20,7 +39,6 @@
     <object-name>front-door</object-name>
     <object-name>front-door1</object-name>
     <object-name>front-frame</object-name>
-    <object-name>ID985.001</object-name>
     <object-name>elevator</object-name>
     <object-name>right-boom</object-name>
     <object-name>right-fin</object-name>
@@ -29,55 +47,13 @@
     <object-name>left-inner-door</object-name>
     <object-name>right-outer-door</object-name>
     <object-name>right-inner-door</object-name>
-    <object-name>canopy-frame</object-name>
+    <object-name>stabilizer</object-name> 
         
   </effect> -->
   
-  <!-- Solid Surfaces for Rembrandt rendering -->
-   <animation>
-    <object-name>fuselage</object-name>
-    <object-name>left-boom</object-name>
-    <object-name>left-fin</object-name>
-    <object-name>left-tank</object-name>
-    <object-name>left-wing</object-name>
-    <object-name>front-door</object-name>
-    <object-name>front-door1</object-name>
-    <object-name>front-frame</object-name>
-    <object-name>ID985.001</object-name>
-    <object-name>elevator</object-name>
-    <object-name>right-boom</object-name>
-    <object-name>right-fin</object-name>
-    <object-name>right-wing</object-name>
-    <object-name>left-outer-door</object-name>
-    <object-name>left-inner-door</object-name>
-    <object-name>right-outer-door</object-name>
-    <object-name>right-inner-door</object-name>
-    <object-name>canopy-frame</object-name>
-		
-    </animation>
   
-  <animation>
-    <type>shader</type>
-    <shader>chrome</shader>
-    <texture>Aircraft/Generic/Effects/glass_shader.png</texture>
-     <object-name>canopy1</object-name>
-<object-name>canopy-glass</object-name>
-<object-name>front-galss</object-name>
-<object-name>glass</object-name>
-  </animation>
-  
-  
-  <effect>
-      <inherits-from>Effects/model-transparent</inherits-from>
-      <object-name>canopy1</object-name>
-<object-name>canopy-glass</object-name>
-<object-name>front-galss</object-name>
-<object-name>glass</object-name>
-   </effect>
-  
-  
-  <!-- Effets de tir -->
-  <!-- Haut gauche -->
+  <!-- gun effects -->
+  <!-- Left Upper -->
   <model>
     <path>Aircraft/vampire/Models/effects/guns/fire.xml</path>
     <offsets>
@@ -88,7 +64,7 @@
     </offsets>
   </model>
 
-  <!-- Haut droite -->
+  <!-- Right Upper -->
   <model>
     <path>Aircraft/vampire/Models/effects/guns/fire.xml</path>
     <offsets>
@@ -99,7 +75,7 @@
     </offsets>
   </model>
   
-  <!-- Bas gauche -->
+  <!-- Left Lower -->
   <model>
     <path>Aircraft/vampire/Models/effects/guns/fire.xml</path>
     <offsets>
@@ -110,7 +86,7 @@
     </offsets>
   </model>
 
-  <!-- Bas droite -->
+  <!-- Right Lower -->
   <model>
     <path>Aircraft/vampire/Models/effects/guns/fire.xml</path>
     <offsets>
@@ -121,54 +97,44 @@
     </offsets>
   </model>
 
-  <!-- Effets sur le sol -->
-  <!-- Roue avant -->
+  <!-- ground wheel dust -->
+  <!-- Front wheel -->
   <model>
     <path>Aircraft/vampire/Models/effects/ground0.xml</path>
     <offsets>
-      <x-m> -2.277 </x-m>
+      <x-m> -2.217 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -1</z-m>
+      <z-m> -1.171 </z-m>
     </offsets>
   </model>
 
-  <!-- Roue gauche -->
+  <!-- Left wheel -->
   <model>
     <path>Aircraft/vampire/Models/effects/ground1.xml</path>
     <offsets>
-      <x-m> 0.939 </x-m>
-      <y-m> -1.587 </y-m>
-      <z-m> -1.0 </z-m>
+      <x-m> 1.089 </x-m>
+      <y-m> -1.597 </y-m>
+      <z-m> -1.162 </z-m>
     </offsets>
   </model>
 
-  <!-- Roue droite -->
+  <!-- right wheel -->
   <model>
     <path>Aircraft/vampire/Models/effects/ground2.xml</path>
     <offsets>
-      <x-m> 0.939 </x-m>
-      <y-m>  1.587 </y-m>
-      <z-m> -1.0</z-m>
+      <x-m> 1.089 </x-m>
+      <y-m>  1.597 </y-m>
+      <z-m> -1.062 </z-m>
     </offsets>
   </model>
 
-  <!-- Les flammes -->
-  <!-- Gauche -->
+  <!-- engine exhuast effects -->
   <model>
     <path>Aircraft/vampire/Models/effects/flammes/flammesG.xml</path>
     <offsets>
       <x-m>  2.55 </x-m>
       <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/vampire/Models/exaustinner.ac</path>
-    <offsets>
-      <x-m>  2.55 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
+      <z-m> -0.048 </z-m>
     </offsets>
   </model>
 
@@ -180,48 +146,65 @@
     <offsets>
      <x-m>  2.55 </x-m>
       <y-m> 0 </y-m>
-      <z-m> 0 </z-m>
+      <z-m> -0.048 </z-m>
       <roll-deg>    0 </roll-deg>
       <pitch-deg>   0 </pitch-deg>
       <heading-deg> 0 </heading-deg>
     </offsets>
   </model>
-  
-  <!-- Tip trails -->
-  <model>
-    <path>Aircraft/vampire/Models/effects/tiptrail/tiptrail.xml</path>
-    <offsets>
-      <x-m> 0.5 </x-m>
-      <y-m>  -5.5 </y-m>
-      <z-m> 0.25 </z-m>
-    </offsets>
-  </model>
-  
-  
-  <model>
-    <path>Aircraft/vampire/Models/effects/tiptrail/tiptrail.xml</path>
-    <offsets>
-      <x-m> 0.5 </x-m>
-      <y-m>  5.5 </y-m>
-      <z-m> 0.25 </z-m>
-    </offsets>
-  </model>
 
- 
-
-  
-
-  <!-- Interieur -->
+  <!-- Interior -->
   <model>
     <path>Aircraft/vampire/Models/Interior/interior.xml</path>
     <offsets>
-      <x-m> 0 </x-m>
-      <y-m> 0 </y-m>
-      <z-m> 0.0 </z-m>
+      <x-m> 0.109 </x-m>
+      <y-m> 0.018 </y-m>
+      <z-m> -0.079 </z-m>
     </offsets>
   </model>
 
-  
+  <!-- Interior and control yoke controls animation -->
+
+<animation>
+      <type>rotate</type>
+      <object-name>yoke-stand</object-name>
+      <object-name>yoke</object-name>
+      <property>controls/flight/elevator</property>
+      <interpolation>
+         <entry>      <ind>1.0</ind>   <dep>-10</dep>   </entry>
+         <entry>      <ind>-1.0</ind>   <dep>10</dep>   </entry>
+      </interpolation>
+      <center>
+         <x-m> -1.441 </x-m>
+         <y-m>  0.00 </y-m>
+         <z-m> -0.142 </z-m>
+      </center>
+      <axis>
+         <x>0</x>
+         <y>1</y>
+         <z>0</z>
+     </axis>
+    </animation>
+
+<animation>
+      <type>rotate</type>
+      <object-name>yoke</object-name>
+      <property>controls/flight/aileron</property>
+      <interpolation>
+         <entry>      <ind>1.0</ind>   <dep>-29</dep>   </entry>
+         <entry>      <ind>-1.0</ind>   <dep>29</dep>   </entry>
+      </interpolation>
+      <center>
+         <x-m> -1.33 </x-m>
+         <y-m>  0.00 </y-m>
+         <z-m> 0.153 </z-m>
+      </center>
+      <axis>
+         <x>1</x>
+         <y>0</y>
+         <z>0</z>
+     </axis>
+    </animation>
 
   <!-- Aileron animation -->
   <animation>
@@ -254,7 +237,7 @@
     </axis>
   </animation>
 
- <!-- wing flaps -->
+  <!-- wing flaps -->
   <animation>
     <type>rotate</type>
     <object-name>left-outer-flap</object-name>
@@ -406,7 +389,153 @@
     </axis>
   </animation>
 
- <!-- interpolated gear animations -->
+  <!-- Canopy -->
+  <animation>
+    <name>Canopy</name>
+    <object-name>canopy1</object-name>
+    <object-name>canopy1frame</object-name>
+    <object-name>canopyrearframe</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>Canopy</object-name>
+    <property>/instrumentation/doors/crew/position-norm</property>
+    <interpolation>
+      <entry><ind> 0.00 </ind><dep>   0 </dep></entry>
+      <entry><ind> 1.00 </ind><dep> 0.41 </dep></entry>
+    </interpolation>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0.1745 </z>
+    </axis>
+  </animation>
+
+<!-- Throttle Quad assembly controls -->
+
+<!-- Throttle lever -->
+
+      <animation>
+    <type>rotate</type>
+    <object-name>port-fuelcutoff</object-name>
+    <property>consumables/fuel/tank/selected</property>
+    <factor> 32 </factor>
+    <center>
+   <x-m>-2.3885</x-m>
+   <y-m>-0.358</y-m>
+   <z-m>0.13408</z-m>
+  </center>
+    <axis>
+      <x> 0.0 </x>
+      <y> 1.0 </y>
+      <z> 0.0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>stbd-fuelcutoff</object-name>
+    <property>consumables/fuel/tank[1]/selected</property>
+    <factor> 32 </factor>
+    <center>
+   <x-m>-2.3885</x-m>
+   <y-m>-0.358</y-m>
+   <z-m>0.13408</z-m>
+  </center>
+    <axis>
+      <x> 0.0 </x>
+      <y> 1.0 </y>
+      <z> 0.0 </z>
+    </axis>
+  </animation>
+
+<!-- throttle -->
+ 
+	<animation> 
+    <object-name>throttle-lever</object-name>
+    <type>rotate</type>
+    <property>controls/engines/engine/throttle</property>
+    <factor>-45</factor>
+		<center>
+			<x-m> -1.1546 </x-m>
+			<y-m> -0.389 </y-m>
+			<z-m> 0.2503 </z-m>
+		</center>
+		<axis> 
+			<x>  0 </x>
+			<y>  1 </y>
+			<z>  0 </z>
+		</axis>
+	</animation>
+
+<!-- Elevator Trim -->
+
+ <animation> 
+    <type>rotate</type>
+    <object-name>elev-trim-wheel</object-name>
+    <property>controls/flight/elevator-trim</property>
+    <factor>1440</factor>
+     <center> 
+       <x-m> -1.1546 </x-m>
+	 <y-m> -0.360 </y-m>
+	 <z-m> 0.1995 </z-m>
+     </center>
+
+    <axis> 
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+
+  </animation>
+
+<!-- Gear lever -->
+
+<animation>
+    <type>rotate</type>
+    <object-name>gear-lever</object-name>
+     <property>controls/gear/gear-down</property>
+    <interpolation>
+			<entry><ind>1</ind><dep> 26 </dep></entry>
+			<entry><ind>0</ind><dep> 75 </dep></entry> 
+		</interpolation>  
+		<center>
+			<x-m>-1.1546</x-m>
+			<y-m>-0.340</y-m>
+			<z-m> 0.1815</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+<!-- Flap control -->
+
+<animation>
+    <type>rotate</type>
+    <object-name>flap-lever</object-name>
+    <property>controls/flight/flaps</property>
+    <interpolation>
+      <entry><ind> 0.0 </ind><dep>  62 </dep></entry>
+      <entry><ind> 0.5 </ind><dep>  41 </dep></entry>
+      <entry><ind> 1.0 </ind><dep>  24 </dep></entry>
+		</interpolation>  
+		<center>
+			<x-m>-1.1546</x-m>
+			<y-m>-0.340</y-m>
+			<z-m> 0.1815</z-m>
+		</center>
+		<axis>
+			<x>0</x>
+			<y>-1</y>
+			<z>0</z>
+		</axis>
+	</animation>
+
+  <!-- interpolated gear animations -->
   <animation>
     <type>rotate</type>
     <object-name>nose-leg</object-name>
@@ -622,58 +751,6 @@
     </axis>
   </animation>
 
-  <animation>
-    <name>AxeRoueG</name>
-    <object-name>roueG</object-name>
-    <object-name>axeGB</object-name>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>AxeRoueG</object-name>
-    <property>/gear/gear[1]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep> -5 </dep></entry>
-      <entry><ind> 1 </ind><dep> 15 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.029 </x-m>
-      <y-m> -1.587 </y-m>
-      <z-m> -1.195 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
-  <animation>
-    <name>AxeRoueD</name>
-    <object-name>roueD</object-name>
-    <object-name>axeDB</object-name>
-  </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>AxeRoueD</object-name>
-    <property>/gear/gear[2]/compression-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep> -5 </dep></entry>
-      <entry><ind> 1 </ind><dep> 15 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> -2.029 </x-m>
-      <y-m>  1.587 </y-m>
-      <z-m> -1.195 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y> -1 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
   <!-- front wheel gear steering animation -->
   <animation>
     <name>front-steering</name>
@@ -710,9 +787,9 @@
     <property>gear/gear[0]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m> -2.361 </x-m>
+      <x-m> -2.3566 </x-m>
       <y-m>  0.000 </y-m>
-      <z-m> -0.965 </z-m>
+      <z-m> -0.9627 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -727,9 +804,9 @@
     <property>gear/gear[1]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m>  0.813 </x-m>
-      <y-m> -1.591 </y-m>
-      <z-m> -0.744 </z-m>
+      <x-m>  0.8074 </x-m>
+      <y-m> -1.585 </y-m>
+      <z-m> -0.7376 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -744,9 +821,9 @@
     <property>gear/gear[2]/rollspeed-ms</property>
     <factor> 30 </factor>
     <center>
-      <x-m>  0.813 </x-m>
-      <y-m>  1.591 </y-m>
-      <z-m> -0.744 </z-m>
+      <x-m>  0.8074 </x-m>
+      <y-m> -1.5919 </y-m>
+      <z-m> -0.7376 </z-m>
     </center>
     <axis>
       <x>  0 </x>
@@ -782,105 +859,12 @@
     <animation>
         <type>select</type>
         <object-name>pilot</object-name>
-		
 		<condition>
 <not>
             <property>sim/current-view/internal</property>
 </not>
         </condition>
     </animation>
-
-  <animation>
-    <type>rotate</type>
-    <object-name>canopy-glass</object-name>
-	<object-name>canopy-frame</object-name>
-    <property>/instrumentation/doors/crew/position-norm</property>
-    <interpolation>
-      <entry><ind> 0 </ind><dep>  0 </dep></entry>
-      <entry><ind> 1 </ind><dep> 60 </dep></entry>
-    </interpolation>
-    <center>
-      <x-m> 0 </x-m>
-      <y-m>  -2.000 </y-m>
-      <z-m>  0 </z-m>
-    </center>
-    <axis>
-      <x>  0 </x>
-      <y>  1 </y>
-      <z>  0 </z>
-    </axis>
-  </animation>
-
-  <!-- Pilot invisible from internally -->
-
-    <animation>
-        <type>select</type>
-        <object-name>pilot</object-name>
-		  <object-name>canopy1</object-name>
-<object-name>canopy-glass</object-name>
-<object-name>front-galss</object-name>
-		<condition>
-<not>
-            <property>sim/current-view/internal</property>
-</not>
-        </condition>
-    </animation>
- 
-
-<!-- lights -->
-
-<model>
-    <path>Aircraft/vampire/Models/lights/beacon.xml</path>
-    <offsets>
-      <x-m> 1.300 </x-m>
-      <y-m> 0.000 </y-m> 
-	    <z-m> 0.680 </z-m> 
-    </offsets>
-  </model> 
-
-  <model>
-    <path>Aircraft/vampire/Models/lights/beacon.xml</path>
-    <offsets>
-      <x-m>  0 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.7 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/vampire/Models/lights/RedLight.xml</path>
-    <offsets>
-      <x-m> 0.45 </x-m>
-      <y-m>  -5.2 </y-m>
-      <z-m> 0.25 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/vampire/Models/lights/GreenLight.xml</path>
-    <offsets>
-      <x-m> 0.45 </x-m>
-      <y-m>  5.2 </y-m>
-      <z-m> 0.25 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/vampire/Models/lights/StrobeWhite.xml</path>
-    <offsets>
-     <x-m> 0.5 </x-m>
-      <y-m>  -5.5 </y-m>
-      <z-m> 0.25 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Aircraft/vampire/Models/lights/StrobeWhite.xml</path>
-    <offsets>
-      <x-m> 0.5 </x-m>
-      <y-m>  5.5 </y-m>
-      <z-m> 0.25 </z-m>
-    </offsets>
-  </model> 
+  
   
 </PropertyList>
